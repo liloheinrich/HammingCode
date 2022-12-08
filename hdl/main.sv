@@ -1,6 +1,8 @@
 `default_nettype none // Overrides default behavior (in a good way)
 
 module main(clk, switch_input, switch_error, correct_parity, errored_message, correct_output);
+// module main(clk, switch_input, switch_error, correct_parity, errored_message);
+
 //Module I/O and parameters
 parameter N = 4; // num message bits
 parameter M = 3; // num parity bits
@@ -9,7 +11,7 @@ input wire [N-1:0] switch_input;
 input wire [N+M-1:0] switch_error; 
 output logic [M-1:0] correct_parity; 
 output logic [N+M-1:0] errored_message; 
-output wire [N-1:0] correct_output; 
+output logic [N-1:0] correct_output; 
 logic [M-1:0] error_indicator; 
 
 always_comb begin
